@@ -83,12 +83,20 @@ sayHelloButton.addEventListener("click", sayHello)
     
     Handle the promise that's returned with a .then, which you should pass a callback function to. Inside the callback function, console.log the response's data (in the intermediate instructions we'll come back to this function and add HTML).
 */ 
+/* 
+    Back in the ohMy function on Problem 5, replace the console log in the promise's callback with a for loop that loops over res.data. 
+
+    On each iteration of the loop, create a new p element. Set its textContent equal the string at the current index (i) and then append the new p element onto the document's body. 
+*/
 
 const ohMy = () => {
     axios.get('http://localhost:3000/animals')
     .then(response => {
-      console.log(response.data)
-      //return response.data
+    for( let i = 0; i < response.data.length; i++) {
+        // document.createElement()
+        // newPElement(response.data[i]) = textContent
+        // .appendChild()
+    }
     })}
 
 document.getElementById('animals-button').addEventListener('click', ohMy)
